@@ -1,16 +1,25 @@
 import java.time.LocalDateTime;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CheckOutApp{
 	public static void main(String[] args){
 	Scanner input = new Scanner(System.in);
 
+	ArrayList<String> itemsBought = new ArrayList<>();
+	ArrayList<Integer> itemsNo = new ArrayList<>();
+	ArrayList<double> itemPrice = new ArrayList<>();
 
-	System.out.print("What did you buy\n ");
+	System.out.print("What is the customer's Name? ");
+	String name = input.nextLine();
+	
+	System.out.print("What did you buy? ");
         String itemPurchased = input.nextLine();
         itemsBought.add(itemPurchased);
         
-        System.out.print("How many peices\n "); 
+        System.out.print("How many peices "); 
         int itemsNumber = input.nextInt();
         itemsNo.add(itemsNumber);
         
@@ -19,10 +28,10 @@ public class CheckOutApp{
         itemPrice.add(howMuch);
         
         input.nextLine();
-        System.out.println("Add more items?\n");
+        System.out.println("Add more items? ");
         String addItems = input.nextLine();
         
-        System.out.println("What is your name?\n");
+        System.out.println("What is your name (Cashier)? ");
         String cashier = input.nextLine();
         
         System.out.println("How much discount will he get?\n");
